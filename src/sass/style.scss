@@ -1,0 +1,256 @@
+// A map of breakpoints.
+$breakpoints: (
+  xs: 320px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xlg: 1920px,
+  xxlg: 2600px
+);
+
+//Fonts and It's Responsive Sizes
+$Font: "Roboto";
+$fontXtraLarge: 24px;
+$fontLarge: 18px;
+$FontMedium: 14px;
+$FontSmall: 12px;
+$FontXtraSmall: 9px;
+
+//Colors
+$bgColor: #fcf4d4;
+$navBarBg: #8a8888;
+$white: #ffff;
+$base: #e4e4e4;
+$gray: gray;
+
+//Flex
+$flex: flex;
+$fcol: column;
+$frow: row;
+$fwrap: wrap;
+
+//Code Section
+
+//bootstrap responsive box sizing
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+//body
+body {
+  background: $bgColor;
+  padding: 0;
+  margin: 0;
+}
+
+//flex ..
+.flex-container {
+  display: $flex;
+  flex-direction: $fcol;
+  flex-wrap: $fwrap;
+  background: $base;
+  height: 100%;
+}
+
+.flex-row {
+  display: $flex;
+  flex-direction: $frow;
+  flex-wrap: $fwrap;
+  // justify-content: space-between;
+}
+
+// Top Nav Bar Area
+.nav-box {
+  background: $navBarBg;
+}
+
+.navbar-text {
+  color: $white;
+  font-size: $FontMedium;
+}
+
+.nav-li-wrap {
+  background: rgb(88, 88, 88);
+  color: $white;
+}
+
+.empty {
+  height: 30px;
+  width: 100px;
+  margin-right: 10px;
+}
+
+.empty-white-bar-vertical {
+  height: 30px;
+  width: 5px;
+  background: white;
+}
+
+.nav-item {
+  margin-right: 50px;
+  margin-left: 5px;
+}
+
+.active {
+  background: #4391d4;
+  color: $white;
+}
+
+.logo-area {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background: $white;
+  display: $flex;
+  position: relative;
+  margin-top: 5px;
+}
+
+.logo-area-text {
+  padding: 8px;
+  font-size: $FontMedium;
+  color: black;
+}
+
+.menu-item-box {
+  background: $navBarBg;
+}
+
+//Inside The Wrapping Container
+
+//header - currency rates chart
+.header {
+  flex-basis: 40%;
+  padding: 20px;
+  font-size: $fontLarge;
+}
+
+//inner content
+.inner-content {
+  display: $flex;
+  flex-direction: $frow;
+  flex-wrap: $fwrap;
+  justify-content: space-between;
+}
+
+//sider
+.sider {
+  display: $flex;
+  flex-direction: $fcol;
+  background: $gray;
+  padding: 20px;
+  height: 443px;
+}
+
+.filter-text {
+  color: $white;
+  font-size: $fontLarge;
+}
+
+//main content
+.main-content {
+  width: 100%;
+  height: 100%;
+}
+
+label {
+  color: $white;
+  opacity: 0.8;
+  font-size: $fontLarge;
+}
+
+.card {
+  margin-top: 5px;
+  font-size: $FontMedium;
+}
+
+//footer
+.footer {
+  background: #a7a7a7;
+}
+
+.footer-empty-box {
+  height: 60px;
+  width: 70px;
+  background: $base;
+  margin-right: 20px;
+}
+
+// Media Queries
+
+//Tablets
+@media screen and (min-width: map-get($breakpoints, sm)) and (max-width: map-get($breakpoints, md) - 1px) {
+  label {
+    font-size: $FontSmall;
+  }
+  .form-check-input {
+    height: 16px;
+  }
+  .filter-text {
+    font-size: $FontMedium;
+  }
+  .navbar-text {
+    color: $white;
+    font-size: $FontSmall;
+  }
+  .header {
+    font-size: $FontMedium;
+  }
+  .card {
+    margin-top: 2px;
+    font-size: $FontMedium;
+  }
+  .footer-empty-box {
+    height: 40px;
+    width: 50px;
+    background: $base;
+    margin-right: 20px;
+  }
+}
+
+//Mobile Devices
+@media screen and (min-width: map-get($breakpoints, xs)) and (max-width: map-get($breakpoints, sm) - 1px) {
+  label {
+    font-size: $FontXtraSmall;
+  }
+  .form-check-input {
+    height: 20px;
+  }
+  .filter-text {
+    font-size: $FontSmall;
+  }
+  .navbar-text {
+    color: $white;
+    font-size: $FontXtraSmall;
+  }
+  .header {
+    font-size: $FontSmall;
+  }
+  .card {
+    margin-top: 2px;
+    font-size: $FontXtraSmall;
+  }
+  .footer-empty-box {
+    height: 30px;
+    width: 40px;
+    background: $base;
+    margin-right: 20px;
+  }
+}
+
+// Desktops
+@media screen and (min-width: map-get($breakpoints, xlg)) and (max-width: map-get($breakpoints, xxlg) - 1px) {
+  .header {
+    font-size: $fontXtraLarge;
+  }
+  .card {
+    margin: 20px;
+    font-size: $fontLarge;
+  }
+  .footer-empty-box {
+    height: 70px;
+    width: 80px;
+    background: $base;
+    margin-right: 40px;
+  }
+}

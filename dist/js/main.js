@@ -1,0 +1,1 @@
+function processData(e,r){$("#currencies").html($("#renderCurrencies").render(e))}function handleError(e,r){alert(e)}$(document).ready(function(){$.ajax({url:"http://currencyapi.net/api/v1/currencies?key=8b4cdd2be86aefb4e7e4e1bd4e4b9bb8f862",dataType:"json",success:processData,error:handleError})});
