@@ -4,6 +4,7 @@ const sass = require("gulp-sass");
 const concat = require("gulp-concat");
 const cleanCSS = require("gulp-clean-css");
 const browserSync = require("browser-sync").create();
+const butternut = require("gulp-butternut");
 
 //Copy HTML Files
 function copyHtml(html) {
@@ -30,7 +31,10 @@ function concatJS(js) {
   gulp
     .src("src/js/*.js")
     .pipe(concat("main.js"))
-    .pipe(uglify())
+    //uglify doesnt support for es6
+    // .pipe(uglify())
+    //butternut supports es6
+    .pipe(butternut())
     .pipe(gulp.dest("dist/js"));
   js();
 }
