@@ -61,7 +61,7 @@ body {
 
 // Top Nav Bar Area
 .nav-box {
-  background: $navBarBg;
+  background: $gray;
 }
 
 .navbar-text {
@@ -151,6 +151,7 @@ body {
 .main-content {
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
 
 label {
@@ -164,9 +165,14 @@ label {
   font-size: $FontMedium;
 }
 
+.card-dark {
+  background: $navBarBg;
+}
+
 //footer
 .footer {
   background: #a7a7a7;
+  width: auto;
 }
 
 .footer-empty-box {
@@ -214,7 +220,7 @@ label {
     font-size: $FontXtraSmall;
   }
   .form-check-input {
-    height: 20px;
+    height: 10px;
   }
   .filter-text {
     font-size: $FontSmall;
@@ -230,6 +236,7 @@ label {
     margin-top: 2px;
     font-size: $FontXtraSmall;
   }
+
   .footer-empty-box {
     height: 30px;
     width: 40px;
