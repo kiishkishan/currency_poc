@@ -63,5 +63,3 @@ function processRates(data, status) {
 function handleRateError(msg, data) {
   alert(msg);
 }
-
-export { getCurrencyValue, processRates, handleRateError };

@@ -51,5 +51,3 @@ function processData(data, status) {
 function handleError(msg, data) {
   alert(msg);
 }
-
-export { processData, handleError };
