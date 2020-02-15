@@ -42,9 +42,10 @@ function concatJS(js) {
 // Concat HTML Files
 // function concatHTML(html) {
 //   gulp
-//     .src("src/*.html")
-//     .pipe(concat("index.html"))
+//     .src("src/app/*.html")
+//     .pipe(concat("app"))
 //     .pipe(gulp.dest("dist/index.html"));
+//   html();
 // }
 
 //Check Whether Gulp is Running or not and Browser Sync Funct

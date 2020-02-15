@@ -1,13 +1,20 @@
 "use strict";
 
+// currency limits
 var limits = [];
+
+// check boxes checked
+var boxChecked = [];
 
 const getCurrencyValue = () => {
   console.log(event.target.value + " = " + event.target.checked);
+
+  // checks for the appropriate checked value and push it inside limit array
   if (event.target.checked == true) {
     limits.push(event.target.value);
     console.log(limits.length);
   }
+  // Checks for the Appropriate value of deselected checkbox and splice it from the limits array
   if (event.target.checked == false) {
     for (let i = 0; i < limits.length; i++) {
       if (limits[i] === event.target.value) {
@@ -21,7 +28,7 @@ const getCurrencyValue = () => {
 };
 
 $(document).ready(
-  $.debounce(400, function(e) {
+  $.debounce(4000, function(e) {
     let API_KEY = "6c060bf41e9c9cbd7bdb123661270b98d1c8";
     let base = "USD";
 
@@ -56,3 +63,5 @@ function processRates(data, status) {
 function handleRateError(msg, data) {
   alert(msg);
 }
+
+export { getCurrencyValue, processRates, handleRateError };

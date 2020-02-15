@@ -29,7 +29,7 @@
 
     <title>Currency Meter</title>
   </head>
-  <body>
+  <body class="body-container" id="body_render">
     <!-- Actual HTML Elements -->
 
     <!-- Top navBar -->
@@ -84,8 +84,19 @@
           <div id="result"></div>
 
           <!-- Declare a JsRender template, in a script block: -->
-
           <script id="myTmpl" type="text/x-jsrender">
+            <!-- To Deselect All Filters and let user see all the stuff -->
+             <!-- <div class="form-check">
+               <input
+                 type="checkbox"
+                 class="form-check-input"
+                 id="deselect_all"
+                 onchange="deselectAllFilters(this)"
+
+               />
+               <label for="deselect_all">deselect all</label>
+             </div> -->
+
             <!-- before i used props but i couldnt control the limit of it so temporarily i am rendering like this-->
             <!-- AED -->
             {{for currencies}}
@@ -96,6 +107,8 @@
                  value=AED
                  id=AED
                  onchange="getCurrencyValue(this)"
+
+
                />
                <label class="form-check-label" for=AED>
                  {{:AED}}
@@ -188,19 +201,37 @@
 
              </div>
              {{/for}}
+             <!-- CAD -->
+             {{for currencies}}
+             <div class="form-check">
+               <input
+                 class="form-check-input"
+                 type="checkbox"
+                 value=CAD
+                 id=CAD
+                 onchange="getCurrencyValue(this)"
+               />
+               <label class="form-check-label" for=CAD>
+                 {{:CAD}}
+               </label>
+
+             </div>
+             {{/for}}
           </script>
         </div>
 
         <div class="main-content col-8">
           <div class="card-area">
             <!-- Provided container for rendered currencies output: -->
-            <div id="render_rates" style="height: 430px;"></div>
+            <div id="render_rates" class="rates_height"></div>
 
             <!-- Declare a JsRender template, in a script block: -->
             <script id="rates" type="text/x-jsrender">
               {{props rates}}
+
               <div class="card">
-                <div class="card-body card-dark">
+                <div class="card-body" >
+
                   USD:  {{>key}}
                   <br>
                   Rate :
@@ -212,14 +243,14 @@
 
             <!-- Pagination -->
             <!-- <nav aria-label="card-area-pagination">
-            <ul class="pagination pagination-md">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">1</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="/2">2</a></li>
-              <li class="page-item"><a class="page-link" href="/3">3</a></li>
-            </ul>
-          </nav> -->
+          <ul class="pagination pagination-md">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="/2">2</a></li>
+            <li class="page-item"><a class="page-link" href="/3">3</a></li>
+          </ul>
+        </nav> -->
           </div>
         </div>
       </div>
@@ -229,8 +260,6 @@
       <div class="footer-empty-box p-2 bd-highlight"></div>
       <div class="footer-empty-box p-2 bd-highlight"></div>
     </div>
-
-    <!-- JS Render For Rendering List of currencies -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -254,6 +283,6 @@
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
 
     <!-- Custom Script -->
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

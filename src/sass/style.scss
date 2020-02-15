@@ -4,6 +4,8 @@ $breakpoints: (
   sm: 768px,
   md: 992px,
   lg: 1200px,
+  mlg: 1366px,
+  xmlg: 1440px,
   xlg: 1920px,
   xxlg: 2600px
 );
@@ -38,10 +40,13 @@ $fwrap: wrap;
 
 //body
 body {
-  background: $bgColor;
   padding: 0;
   margin: 0;
 }
+
+// .body-container {
+//   background: $base;
+// }
 
 //flex ..
 .flex-container {
@@ -103,7 +108,6 @@ body {
   background: $white;
   display: $flex;
   position: relative;
-  margin-top: 5px;
 }
 
 .logo-area-text {
@@ -131,15 +135,16 @@ body {
   flex-direction: $frow;
   flex-wrap: $fwrap;
   justify-content: space-between;
+  height: 100%;
 }
 
-//sider
+//** responsive sider
 .sider {
   display: $flex;
   flex-direction: $fcol;
   background: $gray;
   padding: 20px;
-  height: 443px;
+  height: 500px;
 }
 
 .filter-text {
@@ -152,6 +157,10 @@ body {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
+}
+//** overflow scroll responsive
+.rates_height {
+  height: 430px;
 }
 
 label {
@@ -173,6 +182,9 @@ label {
 .footer {
   background: #a7a7a7;
   width: auto;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }
 
 .footer-empty-box {
@@ -212,6 +224,16 @@ label {
     background: $base;
     margin-right: 20px;
   }
+  .logo-area {
+    margin-top: 5px;
+  }
+  .sider {
+    height: 400px;
+  }
+  //** overflow scroll responsive
+  .rates_height {
+    height: 390px;
+  }
 }
 
 //Mobile Devices
@@ -243,6 +265,38 @@ label {
     background: $base;
     margin-right: 20px;
   }
+  .logo-area {
+    margin-top: 5px;
+  }
+  .sider {
+    height: 410px;
+  }
+  //** overflow scroll responsive
+  .rates_height {
+    height: 390px;
+  }
+}
+
+//Small Laptops
+@media screen and (min-width: map-get($breakpoints, md)) and (max-width: map-get($breakpoints, lg) - 1px) {
+  .sider {
+    height: 570px;
+  }
+  //** overflow scroll responsive
+  .rates_height {
+    height: 520px;
+  }
+}
+
+//1440px HD Laptops
+@media screen and (min-width: map-get($breakpoints , xmlg )) {
+  .sider {
+    height: 750px;
+  }
+  //** overflow scroll responsive
+  .rates_height {
+    height: 700px;
+  }
 }
 
 // Desktops
@@ -259,5 +313,15 @@ label {
     width: 80px;
     background: $base;
     margin-right: 40px;
+  }
+  .logo-area {
+    margin-top: 5px;
+  }
+  .sider {
+    height: 860px;
+  }
+  //** overflow scroll responsive
+  .rates_height {
+    height: 800px;
   }
 }

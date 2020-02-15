@@ -1,23 +1,7 @@
 "use strict";
 
-// function debounce(func, wait, immediate) {
-//   var timeout;
-//   return function() {
-//     var context = this,
-//       args = arguments;
-//     var later = function() {
-//       timeout = null;
-//       if (!immediate) func.apply(context, args);
-//     };
-//     var callNow = immediate && !timeout;
-//     clearTimeout(timeout);
-//     timeout = setTimeout(later, wait);
-//     if (callNow) func.apply(context, args);
-//   };
-// }
-
 $(document).ready(
-  $.debounce(1500, function(e) {
+  $.debounce(2000, function(e) {
     let API_KEY = "6c060bf41e9c9cbd7bdb123661270b98d1c8";
     $.ajax({
       url: `https://currencyapi.net/api/v1/currencies?key=${API_KEY}`,
@@ -29,6 +13,9 @@ $(document).ready(
 );
 
 function processData(data, status) {
+  // these are the code blocks that i tried to limit the /currencies of max limit 10 by push it into an array and
+  // loop it
+
   // const data1 = [];
   // const data2 = [];
   // const obj = {};
@@ -64,3 +51,5 @@ function processData(data, status) {
 function handleError(msg, data) {
   alert(msg);
 }
+
+export { processData, handleError };
