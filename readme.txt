@@ -1,6 +1,7 @@
 To Experience this System we should follow these instructions or general tips..
 
 ** The given API (Currency API) returns an CORS policy error, so I installed an Extension in Chrome to Unblock that
+Link for the Extension : https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino/
 ** Command to Run this project
     ** npm install or npm i
     ** gulp
