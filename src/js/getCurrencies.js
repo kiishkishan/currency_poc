@@ -1,7 +1,7 @@
 "use strict";
 
 $(document).ready(
-  $.debounce(2000, function(e) {
+  $.debounce(1500, function(e) {
     let API_KEY = "6c060bf41e9c9cbd7bdb123661270b98d1c8";
     $.ajax({
       url: `https://currencyapi.net/api/v1/currencies?key=${API_KEY}`,
@@ -14,7 +14,7 @@ $(document).ready(
 
 function processData(data, status) {
   // these are the code blocks that i tried to limit the /currencies of max limit 10 by push it into an array and
-  // loop it
+  // loop it then change it back to an object
 
   // const data1 = [];
   // const data2 = [];
@@ -36,7 +36,7 @@ function processData(data, status) {
   //     [post[0]]: post[1]
   //   });
   // });
-  // var myJsonString = JSON.stringify((data.currencies = 10));
+  // var myJsonString = JSON.stringify((data.currencies));
   // console.log(myJsonString);
   // // console.log(data.currencies["AED"]);
 

@@ -28,7 +28,7 @@ const getCurrencyValue = () => {
 };
 
 $(document).ready(
-  $.debounce(4000, function(e) {
+  $.debounce(1500, function(e) {
     let API_KEY = "6c060bf41e9c9cbd7bdb123661270b98d1c8";
     let base = "USD";
 

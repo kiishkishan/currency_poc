@@ -217,6 +217,38 @@
 
              </div>
              {{/for}}
+             <!-- BTC -->
+             {{for currencies}}
+             <div class="form-check">
+               <input
+                 class="form-check-input"
+                 type="checkbox"
+                 value=BTC
+                 id=BTC
+                 onchange="getCurrencyValue(this)"
+               />
+               <label class="form-check-label" for=BTC>
+                 {{:BTC}}
+               </label>
+
+             </div>
+             {{/for}}
+             <!-- CHF -->
+             {{for currencies}}
+             <div class="form-check">
+               <input
+                 class="form-check-input"
+                 type="checkbox"
+                 value=CHF
+                 id=CHF
+                 onchange="getCurrencyValue(this)"
+               />
+               <label class="form-check-label" for=CHF>
+                 {{:CHF}}
+               </label>
+
+             </div>
+             {{/for}}
           </script>
         </div>
 
@@ -227,12 +259,13 @@
 
             <!-- Declare a JsRender template, in a script block: -->
             <script id="rates" type="text/x-jsrender">
+              <!-- <b>{{:base}}</b> -->
               {{props rates}}
 
               <div class="card">
                 <div class="card-body" >
 
-                  USD:  {{>key}}
+                  {{:~base}} USD:  {{>key}}
                   <br>
                   Rate :
                   {{>prop}}
